@@ -41,7 +41,7 @@ public class IssueController {
 	  public Issue updateIssue(@PathVariable String id, @RequestBody Issue issue) {
 	    Issue foundIssue = issueRepository.findById(id).orElse(null);
 	    if (foundIssue != null) {
-	    	foundIssue.setName(issue.getName());
+	    	foundIssue.setStatus(issue.getStatus());
 	    	foundIssue.setComplete(issue.isComplete());
 	      issueRepository.save(foundIssue);
 	      return foundIssue;
