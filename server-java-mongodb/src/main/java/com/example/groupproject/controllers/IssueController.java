@@ -42,7 +42,6 @@ public class IssueController {
 	    Issue foundIssue = issueRepository.findById(id).orElse(null);
 	    if (foundIssue != null) {
 	    	foundIssue.setStatus(issue.getStatus());
-	    	foundIssue.setComplete(issue.isComplete());
 	      issueRepository.save(foundIssue);
 	      return foundIssue;
 	    }
