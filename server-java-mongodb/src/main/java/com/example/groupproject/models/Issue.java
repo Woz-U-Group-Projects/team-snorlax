@@ -10,6 +10,7 @@ public class Issue {
 	private String description;
 	private String date;
 	private String status;
+	
 	public int getId() {
 		return id;
 	}
