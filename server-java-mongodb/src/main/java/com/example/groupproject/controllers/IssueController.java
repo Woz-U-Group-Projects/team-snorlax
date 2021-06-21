@@ -37,7 +37,7 @@ public class IssueController {
 	    issueRepository.deleteById(id);
 	  }
 
-	  @PutMapping("/addIssues/{id}")
+	  @PutMapping("/updateIssues/{id}")
 	  public Issue updateIssue(@PathVariable Integer id, @RequestBody Issue issue) {
 	    Issue foundIssue = issueRepository.findById(id).orElse(null);
 	    if (foundIssue != null) {
