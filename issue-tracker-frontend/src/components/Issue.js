@@ -28,7 +28,7 @@ class Issue extends React.Component {
 
   addIssue = () => {
     //uncomment and update url to appropriate url for backend connection
-    let url = "http://localhost:8080/issues";
+    let url = "http://localhost:8080/";
     axios.post(url, { name: this.issueName.current.value }).then(response => {
       // refresh the data
       this.getData();

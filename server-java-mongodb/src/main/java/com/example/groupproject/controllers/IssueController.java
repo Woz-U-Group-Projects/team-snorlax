@@ -16,29 +16,29 @@ import com.example.groupproject.models.Issue;
 import com.example.groupproject.models.IssueRepository;
 
 @RestController
-@RequestMapping("/Issues")
+@RequestMapping("/")
 public class IssueController {
 
 	 @Autowired
 	  IssueRepository issueRepository;
 
-	  @GetMapping()
+	  @GetMapping("/issues")
 	  public List<Issue> getIssues() {
 	    return issueRepository.findAll();
 	  }
 
-	  @PostMapping()
+	  @PostMapping("/addIssues")
 	  public Issue addProject(@RequestBody Issue issue) {
 	    return issueRepository.save(issue);
 	  }
 
-	  @DeleteMapping("/{id}")
-	  public void deleteIssue(@PathVariable String id) {
+	  @DeleteMapping("/issues/{id}")
+	  public void deleteIssue(@PathVariable Integer id) {
 	    issueRepository.deleteById(id);
 	  }
 
-	  @PutMapping("/{id}")
-	  public Issue updateIssue(@PathVariable String id, @RequestBody Issue issue) {
+	  @PutMapping("/addIssues/{id}")
+	  public Issue updateIssue(@PathVariable Integer id, @RequestBody Issue issue) {
 	    Issue foundIssue = issueRepository.findById(id).orElse(null);
 	    if (foundIssue != null) {
 	    	foundIssue.setStatus(issue.getStatus());

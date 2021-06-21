@@ -1,11 +1,15 @@
 package com.example.groupproject.models;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@EntityScan
+@Document(collection = "issue")
 public class Issue {
 
 	@Id
-	private int  id;
+	private int id;
 	private String title;
 	private String description;
 	private String date;
