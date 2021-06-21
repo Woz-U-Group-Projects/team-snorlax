@@ -1,6 +1,10 @@
 import React from "react";
 import axios from "axios";
+import teamLogo from "../Images/snakeLogo.png";
 // import '../task.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button, Form, Container, Row, Col} from 'react-bootstrap';
+
 class Issue extends React.Component {
   constructor(props) {
     super(props);
@@ -41,16 +45,36 @@ class Issue extends React.Component {
   render() {
     return (
       <div>
-        <h3>List of Issues (React)</h3>
-        <input ref={this.issueName} />
-        <button type="button" className="btn btn-primary" onClick={this.addIssue}>add</button>
-        <ul>
-          {this.state.issues.map(p => (
-            <li key={p.issueid}>
-              {p.name} : { p.complete ? "complete" : "not complete" } <button type="button" className="btn btn-success">Complete</button><button type="button" className="btn btn-danger">Delete</button>
-            </li>
-          ))}
-        </ul> 
+        <header className="App-header">
+        <div className="title">
+                <h1 color="green">Team Mamba's Issue Tracker</h1>
+            </div>
+            <div>
+                <img className="iconLogo" src={teamLogo}></img>
+            </div>
+            <Container>
+            <Form>
+                <Form.Group>
+                    <Form.Label>Issue Title</Form.Label>
+                    <Form.Control type="text" placeholder="Title for this issue" width='1000' />
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control as="textarea" placeholder="Please enter a detailed description of your issue" rows={5}/>
+                    <Button variant="primary">Add</Button>
+                </Form.Group>
+            </Form> 
+            </Container>
+            {/* <h3>List of Issues</h3>
+            <input ref={this.issueName} />
+            <button type="button" className="btn btn-primary" onClick={this.addIssue}>add</button>
+            <ul>
+            {this.state.issues.map(p => (
+                <li key={p.issueid}>
+                {p.name} : { p.complete ? "complete" : "not complete" } <button type="button" className="btn btn-success">Complete</button><button type="button" className="btn btn-danger">Delete</button>
+                </li>
+            ))}
+            </ul> */}
+            
+        </header>
       </div>
     );
   }
