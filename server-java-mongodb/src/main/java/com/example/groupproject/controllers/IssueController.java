@@ -32,7 +32,7 @@ public class IssueController {
 	    return issueRepository.save(issue);
 	  }
 
-	  @DeleteMapping("/issues/{id}")
+	  @DeleteMapping("/deleteIssues/{id}")
 	  public void deleteIssue(@PathVariable Integer id) {
 	    issueRepository.deleteById(id);
 	  }
