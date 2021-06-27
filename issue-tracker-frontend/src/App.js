@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import React from 'react';
 import Issue from "./components/Issue";
 import './App.css';
+import NavBar from "./components/Navbar/NavBar";
 
 
 /*function App() {
@@ -27,6 +28,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+        <NavBar />
         <Issue />
     </div>
   );

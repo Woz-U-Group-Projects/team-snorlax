@@ -46,9 +46,6 @@ class Issue extends React.Component {
     return (
       <div>
         <header className="App-header">
-        <div className="title">
-                <h1 color="green">Team Mamba's Issue Tracker</h1>
-            </div>
             <div>
                 <img className="iconLogo" src={teamLogo}></img>
             </div>
